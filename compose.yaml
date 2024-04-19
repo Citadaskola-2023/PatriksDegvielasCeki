@@ -6,7 +6,7 @@ services:
     # image: dunglas/frankenphp:alpine
     build: .
     volumes:
-      - /$PWD:/app
+      - $PWD:/app
     ports:
       - "80:80"
       - "443:443"
