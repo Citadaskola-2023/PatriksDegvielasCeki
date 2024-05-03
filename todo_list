@@ -1,0 +1,10 @@
+1. create db
+    phpmyadmin, chat - how to use it with my compose.yaml
+
+2. fix all issues on public/process_form.php
+
+2. SQL refactor mysqli to pdo -> will prevent sql injections too
+
+3. very nice to have -> simple validation (odometer -> expect only number values, not text; amount could not be negative)
+
+4. display table with saved receipts (create new file in public/show_table.php, which will load all entries from DB and will foreach all items and display on table)

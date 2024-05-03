@@ -21,7 +21,8 @@ class DatabaseConnection
 
     public function connect()
     {
-        $conn = new mysqli($this->host, $this->username, $this->password, $this->database);
+        $conn = new mysqli($this->host, $this->username, $this->password, $this->database); // iesaku izmnatot PDO
+        // prompt: take this code and refactor to PDO (iepeisto visu sito klasi)
 
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -32,6 +33,8 @@ class DatabaseConnection
 
     public function addFuelReceipt(FuelCheckDTO $receipt)
     {
+
+        // IMPORTANT!!! PREVENT SQL INJECTION; // pdo prepare + execute
         $licensePlate = $receipt->getLicensePlate();
         $dateTime = $receipt->getDateTime();
         $petrolStation = $this->connection->real_escape_string($receipt->getPetrolStation());
@@ -50,3 +53,6 @@ class DatabaseConnection
         }
     }
 }
+
+// CREATE TABLE , connect with DB
+// prompt: I have this compose.yaml file, how can I create database tables, how can i see phpmyadmin UI

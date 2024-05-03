@@ -2,6 +2,7 @@
 
 use DTO\FuelCheckDTO;
 
+// Data validation
 $dto = new FuelCheckDTO($_POST["license_plate"], ...);
 
 $conn = new \DatabaseConnection();
